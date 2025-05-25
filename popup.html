@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel Downloader</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="icons/icon48.png" alt="LinkedIn Carousel Downloader" />
+                <h1>LinkedIn Carousel Downloader</h1>
+            </div>
+        </header>
+        
+        <main>
+            <div class="input-section">
+                <label for="linkedin-url">LinkedIn Post URL:</label>
+                <input type="url" id="linkedin-url" placeholder="Paste LinkedIn carousel post URL here..." />
+                <button id="paste-btn" class="secondary-btn">Paste</button>
+            </div>
+            
+            <div class="options-section">
+                <div class="layout-options">
+                    <label>Layout:</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="layout" value="grid" checked />
+                            <span>Grid</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="layout" value="vertical" />
+                            <span>Vertical</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="quality-options">
+                    <label for="dpi-select">Quality (DPI):</label>
+                    <select id="dpi-select">
+                        <option value="72">72 DPI (Standard)</option>
+                        <option value="150">150 DPI (High)</option>
+                        <option value="300">300 DPI (Print)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="action-section">
+                <button id="download-btn" class="primary-btn" disabled>
+                    <span class="btn-text">Download Carousel</span>
+                    <span class="btn-loader" style="display: none;">Processing...</span>
+                </button>
+            </div>
+            
+            <div class="status-section">
+                <div id="status-message" class="status hidden"></div>
+                <div id="progress-bar" class="progress-container hidden">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="progress-text">0%</span>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="tips">
+                <strong>Tips:</strong>
+                <ul>
+                    <li>Make sure you're logged into LinkedIn</li>
+                    <li>Navigate to the carousel post first</li>
+                    <li>Copy the post URL and paste it above</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
