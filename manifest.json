@@ -7,11 +7,13 @@
     "activeTab",
     "downloads",
     "storage",
-    "tabs"
+    "tabs",
+    "scripting"
   ],
   "host_permissions": [
     "https://*.linkedin.com/*",
-    "https://*.licdn.com/*"
+    "https://*.licdn.com/*",
+    "https://media.licdn.com/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -20,7 +22,8 @@
     {
       "matches": ["https://*.linkedin.com/*"],
       "js": ["content-script.js"],
-      "run_at": "document_end"
+      "run_at": "document_end",
+      "all_frames": false
     }
   ],
   "action": {
